@@ -1,0 +1,87 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          l4d2
+# Required-Start:    $remote_fs
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Left 4 Dead 2 Server
+# Description:       Starts a Left 4 Dead 2 Server
+### END INIT INFO
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+NAME="Left4Dead2 Server"
+USER="lfd2"
+SCREENREF="lfd2"
+BINARYPATH="/opt/LFD2"
+BINARYNAME="srcds_run"
+PIDFILE="l4d2pid"
+
+OPTS="-game left4dead2 -norestart +port 27016"
+
+cd "$BINARYPATH"
+
+running() {
+    if [ -n "`pgrep -f $BINARYNAME`" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+start() {
+    if ! running; then
+        echo -n "Starting the $NAME server...
+        start-stop-daemon --start --chuid $USER --user $USER --chdir $BINARYPATH --exec "/usr/bin/screen" -- -dmS $SCREENREF $BINARYPATH/$BINARYNAME $OPTS
+        sleep 3
+        pgrep -f $BINARYNAME > $PIDFILE
+        if [ -s $PIDFILE ]; then
+            echo "Done"
+        else
+            echo "Failed"
+            rm $PIDFILE
+        fi
+    else
+        echo "The $NAME server is already started."
+    fi
+}
+
+stop() {
+    if running; then
+        echo -n "Stopping the $NAME server... "
+        kill `cat $PIDFILE`
+        while running; do
+            sleep 1
+        done
+        rm $PIDFILE
+        echo "Done"
+    else
+        echo "The $NAME server is already stopped."
+    fi
+}
+
+case "$1" in
+    start)
+        start
+    ;;
+    stop)
+        stop
+    ;;
+    restart)
+        stop
+        start
+    ;;
+    status)
+        if running; then
+            echo "The $NAME server is started."
+        else
+            echo "The $NAME server is stopped."
+        fi
+    ;;
+    *)
+        echo "Usage: $0 (start|stop|restart|status)"
+        exit 1
+esac
+exit 0
