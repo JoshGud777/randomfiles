@@ -1,0 +1,31 @@
+[00:42:59] [Server thread/INFO]: Starting minecraft server version 1.8.7
+[00:42:59] [Server thread/INFO]: Loading properties
+[00:42:59] [Server thread/INFO]: Default game type: SURVIVAL
+[00:42:59] [Server thread/INFO]: Generating keypair
+[00:42:59] [Server thread/INFO]: Starting Minecraft server on *:25565
+[00:43:00] [Server thread/INFO]: Using default channel type
+[00:43:00] [Server thread/INFO]: Preparing level "OTE"
+[00:43:00] [Server thread/INFO]: Preparing start region for level 0
+[00:43:01] [Server thread/INFO]: Preparing spawn area: 19%
+[00:43:02] [Server thread/INFO]: Preparing spawn area: 70%
+[00:43:02] [Server thread/INFO]: Done (2.797s)! For help, type "help" or "?"
+[00:43:49] [Server thread/INFO]: [Server] SERVER BACKUP STARTING. Server going readonly...
+[00:43:49] [Server thread/INFO]: Turned off world auto-saving
+[00:43:49] [Server thread/INFO]: Saving...
+[00:43:49] [Server thread/INFO]: Saved the world
+[00:44:00] [Server thread/INFO]: Turned on world auto-saving
+[00:44:00] [Server thread/INFO]: [Server] SERVER BACKUP ENDED. Server going read-write...
+[00:44:08] [Server thread/INFO]: [Server] SERVER SHUTTING DOWN IN 10 SECONDS. Saving map...
+[00:44:08] [Server thread/INFO]: Saving...
+[00:44:08] [Server thread/INFO]: Saved the world
+[00:44:18] [Server thread/INFO]: Stopping the server
+[00:44:18] [Server thread/INFO]: Stopping server
+[00:44:18] [Server thread/INFO]: Saving players
+[00:44:18] [Server thread/INFO]: Saving worlds
+[00:44:18] [Server thread/INFO]: Saving chunks for level 'OTE'/Overworld
+[00:44:18] [Server thread/INFO]: Saving chunks for level 'OTE'/Nether
+[00:44:18] [Server thread/INFO]: Saving chunks for level 'OTE'/The End
+[00:44:18] [Server Shutdown Thread/INFO]: Stopping server
+[00:44:18] [Server Shutdown Thread/INFO]: Saving players
+[00:44:18] [Server Shutdown Thread/INFO]: Saving worlds
+[00:44:18] [Server Shutdown Thread/INFO]: Saving chunks for level 'OTE'/Overworld
