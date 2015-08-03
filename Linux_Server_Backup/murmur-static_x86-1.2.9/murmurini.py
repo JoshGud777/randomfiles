@@ -47,7 +47,7 @@ def main():
 
     if int(nowdaynum) < 10:
         nowdaynum = nowdaynum[1:]
-    if int(nowdaynum[-1:]) < 4 and int(nowdaynum[:-1]) is not 1:
+    if int(nowdaynum[-1:]) < 4 and int(nowdaynum[-1:]) is not 1:
         if int(nowdaynum[-1:]) == 3:
             nowdaynum = nowdaynum + 'rd'
         elif int(nowdaynum[-1:]) == 2:
